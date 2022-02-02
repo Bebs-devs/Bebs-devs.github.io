@@ -15,9 +15,19 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Flower_%28166180281%29.jpeg" alt="Flower" width="200" height="200">
 
 <button type="button"
-onclick="setInterval(function(){ 
-    document.getElementById('dateP').innerHTML = Date()
-}, 1000);">
+onclick="
+if (document.getElementById('dateP').innerHTML.length == 0) {
+    let interval = setInterval(function()
+    { 
+        document.getElementById('dateP').innerHTML = Date()
+    }, 1000);
+} else {
+    clearInterval(interval);
+    document.getElementById('dateP').innerHTML = null;
+}
+"
+
+>
 Click me to display Date and Time.</button>
 
 <p id="dateP"></p>
