@@ -20,8 +20,11 @@
 {
     var x = document.getElementById("dateP");
   if (x.innerHTML === "") {
-    x.innerHTML = Date();
+    let inter = setInterval(() => {
+        x.innerHTML = Date();
+    }, 1000);   
   } else {
+    clearInterval(inter);
     x.innerHTML = "";
   }
 }
