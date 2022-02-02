@@ -14,21 +14,18 @@
 <p></p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Flower_%28166180281%29.jpeg" alt="Flower" width="200" height="200">
 
-<button type="button"
-onclick="
-if (document.getElementById('dateP').innerHTML.length == 0) {
-    let interval = setInterval(function()
-    { 
-        document.getElementById('dateP').innerHTML = Date()
-    }, 1000);
-} else {
-    clearInterval(interval);
-    document.getElementById('dateP').innerHTML = null;
-}
-"
+<button type="button" onclick="toggleDate()">Click me to display Date and Time.</button>
 
->
-Click me to display Date and Time.</button>
+<script>function toggleDate ()
+{
+    var x = document.getElementById("dateP");
+  if (x.innerHTML === "") {
+    x.innerHTML = Date();
+  } else {
+    x.innerHTML = "";
+  }
+}
+</script>
 
 <p id="dateP"></p>
 
