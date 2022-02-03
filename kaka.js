@@ -12,6 +12,7 @@ function Init() {
     setInterval(() => {
         cookieCount+= up1Owned;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
+        console.log("LOOP");
     }, 1000);
 }
 
