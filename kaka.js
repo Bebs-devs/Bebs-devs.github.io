@@ -10,7 +10,7 @@ function Init() {
     upgradeElement1 = document.getElementById("ut1");
 
     setInterval(() => {
-        cookieCount+= up1Owned;
+        muffinCount += up1Owned;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
         console.log("LOOP");
     }, 1000);
