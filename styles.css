@@ -1,7 +1,4 @@
-body
-{
-  background-color: lightblue;
-}
+
   
 h1 
 {
@@ -79,4 +76,12 @@ section {
 
 .layer1 {
   background-image: url('layered-waves-haikei.svg');
+}
+
+html { 
+  background: url('layered-waves-haikei.svg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
