@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Bebs Website</title>
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,23 +15,37 @@
 <p></p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Walter-pup202020.jpg" alt="Walter" >
 
-<button type="button" onclick="toggleDate()">Click me to display Date and Time e.</button>
+<button type="button" onclick="toggleDate()">Click me to display Date and Time ee!</button>
+
 
 <script>
+window.onload = init;
 let dateToggled = false;
+function init() {
+  
 var x = document.getElementById("dateP");
 setInterval(() => {
   if (dateToggled) {
-    x.innerHTML = "";
+    x.innerHTML = Date();
   } else 
   {
-    x.innerHTML = Date();
+    x.innerHTML = "";
   }    
   
     }, 1000); 
+}
+
 function toggleDate ()
 {
    dateToggled = !dateToggled;
+   console.log("Wassup: " + dateToggled);
+   if (dateToggled) 
+   {
+     x.innerHTML = Date();
+   } else 
+   {
+     x.innerHTML = "";
+   }
 }
 
 </script>
