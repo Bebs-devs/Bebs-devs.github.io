@@ -14,20 +14,25 @@
 <p></p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Walter-pup202020.jpg" alt="Walter" style="align-content: center;">
 
-<button type="button" onclick="toggleDate()">Click me to display Date and Time.</button>
+<button type="button" onclick="toggleDate()">Click me to display Date and Time e.</button>
 
-<script>function toggleDate ()
-{
-    var x = document.getElementById("dateP");
-  if (x.innerHTML === "") {
-    let inter = setInterval(() => {
-        x.innerHTML = Date();
-    }, 1000);   
-  } else {
-    clearInterval(inter);
+<script>
+let dateToggled = false;
+var x = document.getElementById("dateP");
+setInterval(() => {
+  if (dateToggled) {
     x.innerHTML = "";
-  }
+  } else 
+  {
+    x.innerHTML = Date();
+  }    
+  
+    }, 1000); 
+function toggleDate ()
+{
+   dateToggled = !dateToggled;
 }
+
 </script>
 
 <p id="dateP"></p>
