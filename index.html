@@ -21,9 +21,10 @@
 <script>
 window.onload = init;
 let dateToggled = false;
+let x;
 function init() {
   
-var x = document.getElementById("dateP");
+x = document.getElementById("dateP");
 setInterval(() => {
   if (dateToggled) {
     x.innerHTML = Date();
@@ -38,13 +39,14 @@ setInterval(() => {
 function toggleDate ()
 {
    dateToggled = !dateToggled;
-   console.log("Wassup: " + dateToggled);
    if (dateToggled) 
    {
      x.innerHTML = Date();
+     console.log("date");
    } else 
    {
      x.innerHTML = "";
+     console.log("NADA");
    }
 }
 
