@@ -107,3 +107,19 @@ html {
   object-fit: cover;
   float: right;
 }
+
+.muffinUpgrades{
+  float: right;
+  width: 18%;
+  height: 100%;
+  opacity: 75%;
+  display: flex;
+  align-items:center;
+}
+
+.upgrade{
+  
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
