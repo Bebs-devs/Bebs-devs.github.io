@@ -87,3 +87,16 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+.kaka {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.cce {
+  text-align: center;
+  text-shadow: turquoise;
+  font-size: large;
+}
