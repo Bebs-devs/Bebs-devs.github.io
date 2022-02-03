@@ -8,6 +8,11 @@ function Init() {
     cookieCountElement = document.getElementById("cce");
     muffinCountElement = document.getElementById("mce");
     upgradeElement1 = document.getElementById("ut1");
+
+    setInterval(() => {
+        cookieCount+= up1Owned;
+        muffinCountElement.innerHTML = muffinCount + " Muffins";
+    }, 1000);
 }
 
 function ClickCookie() {
