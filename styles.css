@@ -100,3 +100,10 @@ html {
   text-shadow: turquoise;
   font-size: large;
 }
+
+.walter{
+  width: 20%;
+  height: 20%;
+  object-fit: cover;
+  float: right;
+}
