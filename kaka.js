@@ -13,7 +13,7 @@ function Init() {
 
     setInterval(() => {
         muffinCount += up1Owned;
-        muffinCount += up2Owned;
+        muffinCount += up2Owned*50;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
         console.log("LOOP");
     }, 1000);
@@ -55,10 +55,10 @@ function Upgrade(index) {
             break;
     }
 
-    function BakeMuffins(amount) 
-    {
+function BakeMuffins(amount) 
+{
         muffinCount += amount;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
-    }
+}
     
 }
