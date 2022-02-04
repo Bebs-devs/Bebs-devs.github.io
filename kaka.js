@@ -54,11 +54,11 @@ function Upgrade(index) {
         default:
             break;
     }
+}
 
-function BakeMuffins(amount) 
+function BakeMuffins(amount)
 {
         muffinCount += amount;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
 }
     
-}

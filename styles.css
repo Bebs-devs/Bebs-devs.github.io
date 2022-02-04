@@ -95,6 +95,11 @@ html {
   width: 50%;
 }
 
+.kaka:active {
+  width: 13%;
+}
+
+
 .ce {
   text-align: center;
   text-shadow: turquoise;
