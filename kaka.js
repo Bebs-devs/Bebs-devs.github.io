@@ -5,15 +5,18 @@ let cookieCountElement;
 let muffinCountElement;
 let upgradeElement1;
 let upgradeElement2;
+let upgradeElement3,
 function Init() {
     cookieCountElement = document.getElementById("cce");
     muffinCountElement = document.getElementById("mce");
     upgradeElement1 = document.getElementById("ut1");
     upgradeElement2 = document.getElementById("ut2");
+    upgradeElement3 = document.getElementById("ut3");
 
     setInterval(() => {
         muffinCount += up1Owned;
         muffinCount += up2Owned*50;
+        muffinCount += up3Owned*10000;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
         console.log("LOOP");
     }, 1000);
@@ -31,6 +34,7 @@ function ClickMuffin() {
 
 let up1Owned = 0;
 let up2Owned = 0;
+let up3Owned = 0;
 function Upgrade(index) {
     switch (index) {
         case 1:
@@ -49,6 +53,15 @@ function Upgrade(index) {
                 up2Owned++;
                 muffinCountElement.innerHTML = muffinCount + " Muffins";
                 upgradeElement2.innerHTML = "Cost:5000 Owned:" + up2Owned;
+            }
+            break;
+        case 3:
+            if (muffinCount >= 1000000) 
+            {
+                muffinCount -= 1000000;
+                up2Owned++;
+                muffinCountElement.innerHTML = muffinCount + " Muffins";
+                upgradeElement3.innerHTML = "Cost:1m Owned:" + up3Owned;
             }
             break;
         default:
