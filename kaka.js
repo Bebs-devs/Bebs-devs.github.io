@@ -36,9 +36,9 @@ function ClickCookie() {
 function ClickMuffin() {
     console.log("clicked muffin");
     muffinCount++;
-    muffinCount += up1Owned;
-    muffinCount += up2Owned*50;
-    muffinCount += up3Owned*10000;
+    muffinCount += cUp1Owned;
+    muffinCount += cUp2Owned*50;
+    muffinCount += cUp3Owned*10000;
     muffinCountElement.innerHTML = muffinCount + " Muffins";
 }
 

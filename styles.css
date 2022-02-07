@@ -106,7 +106,8 @@ section {
 .ce {
   text-align: center;
   text-shadow: turquoise;
-  font-size: large;
+  font-size: xx-large;
+  color: black;
 }
 
 .walter{
@@ -143,7 +144,7 @@ grid-row-gap: 10px;
   display: flex;
   align-items: center;
   justify-content: center;}
-.divCountText {grid-area: 2 / 3 / 3 / 4}
+.divCountText {grid-area: 2 / 3 / 3 / 4;}
 .divClickUpgrades { grid-area: 2 / 1 / 6 / 2; }
 .divMuffinUpgrades { grid-area: 2 / 5 / 6 / 6; }
 .divInfo { grid-area: 1 / 1 / 2 / 2; }
