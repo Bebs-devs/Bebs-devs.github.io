@@ -101,7 +101,14 @@ section {
 .kaka:active {
   transform: scale(2.5,2.5);
 }
+.kakaX {
+  transform: scale(1,1);
+  width: 100%;
+}
 
+.kakaX:active {
+  transform: scale(0.8,0.8);
+}
 
 .ce {
   text-align: center;
