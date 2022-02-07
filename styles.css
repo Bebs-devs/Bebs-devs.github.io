@@ -94,12 +94,12 @@ section {
 
 
 .kaka {
-  
+  transform: scale(3,3);
   width: 100%;
 }
 
 .kaka:active {
-  width: 90%;
+  transform: scale(2.5,2.5);
 }
 
 
@@ -117,7 +117,7 @@ section {
 }
 
 .muffinUpgrades{
-  width: 18%;
+  width: 100%;
   height: 100%;
   opacity: 75%;
   display: flex;
@@ -139,10 +139,11 @@ grid-column-gap: 10px;
 grid-row-gap: 10px;
 }
 
-.divMuffin { grid-area: 1 / 3 / 3 / 4; 
+.divMuffin { grid-area: 1 / 3 / 2 / 4; 
   display: flex;
   align-items: center;
   justify-content: center;}
+.divCountText {grid-area: 2 / 3 / 3 / 4}
 .divClickUpgrades { grid-area: 2 / 1 / 6 / 2; }
 .divMuffinUpgrades { grid-area: 2 / 5 / 6 / 6; }
 .divInfo { grid-area: 1 / 1 / 2 / 2; }
