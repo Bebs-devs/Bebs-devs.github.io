@@ -1,4 +1,4 @@
-<html style="background-image: url('muffinBG.png');" lang="en">
+<html style="background-image: url('muffinBG.png') ;" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,33 +7,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="index.html"><button type="button">no more muffins</button></a>
-    <span>Version 0.2.0.3</span>
+    <div class="divParent">
+        <div class="divMuffin">
+            <a onclick="ClickMuffin();">
+                <img class="kaka" src="Dessert-Muffin.png"/>
+            </a>
+            <div>
+                <p class="ce" id="mce">0 muffins</p>
+            </div>
+        </div>
+
+        <div class="divClickUpgrades">
+
+        </div>
+
+        <div class="divMuffinUpgrades">
+            <section class="muffinUpgrades">
+                    <a onclick="Upgrade(1);">
+                        <img class="upgrade" src="Click-Free-Download-PNG.png"/>
+                    </a>
+                    <p id="ut1">Cost:100 Owned:0</p>
+
+                    <a onclick="Upgrade(2);">
+                        <img class="upgrade" src="Mano_cursor.svg"/>
+                    </a>
+                    <p id="ut2">Cost:5000 Owned:0</p>
+
+                    <a onclick="Upgrade(3);">
+                        <img class="upgrade" src="metalCursorReal.png"/>
+                    </a>
+                    <p id="ut3">Cost:1m Owned:0</p>
+            </section>
+        </div>
+        <div class="divInfo">
+            <a href="index.html">
+                <button type="button">no more muffins</button>
+            </a>
+            <span>Version 0.2.1.0</span> 
+        </div>
+        <div class="divAscend"> </div>
+    </div>
+
+    
     <script type="text/javascript" src="kaka.js"></script>
     <!--<button type="button" onclick="BakeMuffins(10000);">Cheat</button>-->
     <script>window.onload = Init;
     function ABC(){console.log("aaabv");}</script>
-    <div>
-    <a onclick="ClickMuffin();">
-        <img class="kaka" src="Dessert-Muffin.png"/>
-    </a>
-    <p class="ce" id="mce">0 muffins</p>
-    </div>
-    <section class="muffinUpgrades">
-        <a onclick="Upgrade(1);">
-            <img class="upgrade" src="Click-Free-Download-PNG.png"/>
-        </a>
-        <p id="ut1">Cost:100 Owned:0</p>
-
-        <a onclick="Upgrade(2);">
-            <img class="upgrade" src="Mano_cursor.svg"/>
-        </a>
-        <p id="ut2">Cost:5000 Owned:0</p>
-
-        <a onclick="Upgrade(3);">
-            <img class="upgrade" src="metalCursorReal.png"/>
-        </a>
-        <p id="ut3">Cost:1m Owned:0</p>
-    </section>
+    
+    
 </body>
 </html>

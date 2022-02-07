@@ -1,3 +1,11 @@
+html { 
+  background: url('layered-waves-haikei.svg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 p {
   color: white;
 }
@@ -28,13 +36,16 @@ img
 }
 
 section {
-  position: relative;
-  display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 400px;
   padding-top: 100px;
   background: #3c31dd;
+}
+
+.muffinUpgrades {
+
+  float: right;
 }
 
 .curve {
@@ -76,27 +87,19 @@ section {
   background-size: cover;
 }
 
-.layer1 {
+/*.layer1 {
   background-image: url('layered-waves-haikei.svg');
-}
+}*/
 
-html { 
-  background: url('layered-waves-haikei.svg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+
 
 .kaka {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  
+  width: 100%;
 }
 
 .kaka:active {
-  width: 13%;
+  width: 90%;
 }
 
 
@@ -114,7 +117,6 @@ html {
 }
 
 .muffinUpgrades{
-  float: right;
   width: 18%;
   height: 100%;
   opacity: 75%;
@@ -128,3 +130,21 @@ html {
   height: 80%;
   object-fit: contain;
 }
+
+.divParent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 10px;
+grid-row-gap: 10px;
+}
+
+.divMuffin { grid-area: 1 / 3 / 3 / 4; 
+  display: flex;
+  align-items: center;
+  justify-content: center;}
+.divClickUpgrades { grid-area: 2 / 1 / 6 / 2; }
+.divMuffinUpgrades { grid-area: 2 / 5 / 6 / 6; }
+.divInfo { grid-area: 1 / 1 / 2 / 2; }
+.divAscend { grid-area: 1 / 5 / 2 / 6; }
+
