@@ -89,7 +89,7 @@ function ClickUpgrade(index) {
                 muffinCount -= 100;
                 cUp1Owned++;
                 muffinCountElement.innerHTML = muffinCount + " Muffins";
-                upgradeElement1.innerHTML = "Cost:100 Owned:" + up1Owned;
+                clickUpgradeElement1.innerHTML = "Cost:100 Owned:" + cUp1Owned;
             }  
             break;
         case 2:
@@ -98,7 +98,7 @@ function ClickUpgrade(index) {
                 muffinCount -= 5000;
                 cUp2Owned++;
                 muffinCountElement.innerHTML = muffinCount + " Muffins";
-                upgradeElement2.innerHTML = "Cost:5000 Owned:" + up2Owned;
+                clickUpgradeElement2.innerHTML = "Cost:5000 Owned:" + cUp2Owned;
             }
             break;
         case 3:
@@ -107,7 +107,7 @@ function ClickUpgrade(index) {
                 muffinCount -= 1000000;
                 cUp3Owned++;
                 muffinCountElement.innerHTML = muffinCount + " Muffins";
-                upgradeElement3.innerHTML = "Cost:1m Owned:" + up3Owned;
+                clickUpgradeElement3.innerHTML = "Cost:1m Owned:" + cUp3Owned;
             }
             break;
         default:
