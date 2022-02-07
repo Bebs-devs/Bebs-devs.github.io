@@ -1,11 +1,11 @@
 
 let cookieCount = 0;
-let muffinCount = 0;
+let muffinCount = 1000000;
 let cookieCountElement;
 let muffinCountElement;
 let upgradeElement1;
 let upgradeElement2;
-let upgradeElement3,
+let upgradeElement3;
 function Init() {
     cookieCountElement = document.getElementById("cce");
     muffinCountElement = document.getElementById("mce");
@@ -28,6 +28,7 @@ function ClickCookie() {
 }
 
 function ClickMuffin() {
+    console.log("clicked muffin");
     muffinCount++;
     muffinCountElement.innerHTML = muffinCount + " Muffins";
 }
@@ -59,7 +60,7 @@ function Upgrade(index) {
             if (muffinCount >= 1000000) 
             {
                 muffinCount -= 1000000;
-                up2Owned++;
+                up3Owned++;
                 muffinCountElement.innerHTML = muffinCount + " Muffins";
                 upgradeElement3.innerHTML = "Cost:1m Owned:" + up3Owned;
             }
@@ -74,4 +75,6 @@ function BakeMuffins(amount)
         muffinCount += amount;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
 }
+
+function ABC() {console.log("ALPHABET"); nb}
     
