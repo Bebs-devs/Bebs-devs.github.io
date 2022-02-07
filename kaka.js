@@ -1,28 +1,33 @@
 
 let cookieCount = 0;
-let muffinCount = 0;
+let muffinCount = 10000000000;
 let cookieCountElement;
 let muffinCountElement;
 let upgradeElement1;
 let upgradeElement2;
 let upgradeElement3;
+let upgradeElement4;
 let clickUpgradeElement1;
 let clickUpgradeElement2;
 let clickUpgradeElement3;
+let clickUpgradeElement4;
 function Init() {
     cookieCountElement = document.getElementById("cce");
     muffinCountElement = document.getElementById("mce");
     upgradeElement1 = document.getElementById("ut1");
     upgradeElement2 = document.getElementById("ut2");
     upgradeElement3 = document.getElementById("ut3");
+    upgradeElement4 = document.getElementById("ut4");
     clickUpgradeElement1 = document.getElementById("cUt1");
     clickUpgradeElement2 = document.getElementById("cUt2");
     clickUpgradeElement3 = document.getElementById("cUt3");
+    clickUpgradeElement4 = document.getElementById("cUt4");
 
     setInterval(() => {
         muffinCount += up1Owned;
         muffinCount += up2Owned*50;
         muffinCount += up3Owned*10000;
+        muffinCount += up4Owned*10000000;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
         console.log("LOOP");
     }, 1000);
@@ -39,12 +44,14 @@ function ClickMuffin() {
     muffinCount += cUp1Owned;
     muffinCount += cUp2Owned*50;
     muffinCount += cUp3Owned*10000;
+    muffinCount += cUp4Owned*1000000;
     muffinCountElement.innerHTML = muffinCount + " Muffins";
 }
 
 let up1Owned = 0;
 let up2Owned = 0;
 let up3Owned = 0;
+let up4Owned = 0;
 function Upgrade(index) {
     switch (index) {
         case 1:
@@ -73,6 +80,14 @@ function Upgrade(index) {
                 muffinCountElement.innerHTML = muffinCount + " Muffins";
                 upgradeElement3.innerHTML = "Cost:1m Owned:" + up3Owned;
             }
+        case 4:
+            if (muffinCount >= 1000000000) 
+            {
+                muffinCount -= 1000000000;
+                up4Owned++;
+                muffinCountElement.innerHTML = muffinCount + " Muffins";
+                upgradeElement4.innerHTML = "Cost:1b Owned:" + up4Owned;
+            }
             break;
         default:
             break;
@@ -81,6 +96,7 @@ function Upgrade(index) {
 let cUp1Owned = 0;
 let cUp2Owned = 0;
 let cUp3Owned = 0;
+let cUp4Owned = 0;
 function ClickUpgrade(index) {
     switch (index) {
         case 1:
@@ -108,6 +124,14 @@ function ClickUpgrade(index) {
                 cUp3Owned++;
                 muffinCountElement.innerHTML = muffinCount + " Muffins";
                 clickUpgradeElement3.innerHTML = "Cost:1m Owned:" + cUp3Owned;
+            }
+        case 4:
+            if (muffinCount >= 1000000000) 
+            {
+                muffinCount -= 1000000000;
+                cUp4Owned++;
+                muffinCountElement.innerHTML = muffinCount + " Muffins";
+                clickUpgradeElement4.innerHTML = "Cost:1m Owned:" + cUp4Owned;
             }
             break;
         default:
