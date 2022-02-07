@@ -1,6 +1,6 @@
 
 let cookieCount = 0;
-let muffinCount = 1000000;
+let muffinCount = 0;
 let cookieCountElement;
 let muffinCountElement;
 let upgradeElement1;
