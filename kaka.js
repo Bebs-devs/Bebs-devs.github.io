@@ -28,6 +28,7 @@ function Init() {
 
     console.log(localStorage.SmuffinCount);
     muffinCount = parseInt( localStorage.SmuffinCount );
+    if (isNaN(muffinCount)) {muffinCount=0;}
     UpdateMuffinText();
     LoadUpgrades();
 
@@ -38,11 +39,11 @@ function Init() {
         muffinCount += up2Owned*50;
         muffinCount += up3Owned*10000;
         muffinCount += up4Owned*10000000;
-        muffinCountElement.innerHTML = muffinCount.toString() + " Muffins";
-
+        if (isNaN(muffinCount)) {muffinCount=0;}
+        UpdateMuffinText();
+        
         localStorage.SmuffinCount = muffinCount;
-        console.log("stored muffins");
-        console.log("LOOP");
+        console.log("LOOP "+ muffinCount);
     }, 1000);
 }
 
@@ -61,6 +62,7 @@ function ClickMuffin() {
     muffinCount += cUp2Owned*5;
     muffinCount += cUp3Owned*1000;
     muffinCount += cUp4Owned*1000000;
+    if (isNaN(muffinCount)) {muffinCount=0;}
     UpdateMuffinText();
 }
 
@@ -177,22 +179,37 @@ function SaveUpgrades() {
 
 function LoadUpgrades() {
     let t1 = parseInt( localStorage.Sup1Owned );
-    upgradeElement4.innerHTML = "Cost:100 Owned:" + ((t1 != NaN) ? t1 : 0);
+    up1Owned = ((!isNaN(t1)) ? t1 : 0);
+    upgradeElement1.innerHTML = "Cost:100 Owned:" + up1Owned;
+
     let t2 = parseInt( localStorage.Sup2Owned );
-    upgradeElement4.innerHTML = "Cost:5000 Owned:" + ((t2 != NaN) ? t2 : 0);
+    up2Owned = ((!isNaN(t2)) ? t2 : 0);
+    upgradeElement2.innerHTML = "Cost:5000 Owned:" + up2Owned;
+
     let t3 = parseInt( localStorage.Sup3Owned );
-    upgradeElement4.innerHTML = "Cost:1m Owned:" + ((t3 != NaN) ? t3 : 0);
+    up3Owned = ((!isNaN(t3)) ? t3 : 0);
+    upgradeElement3.innerHTML = "Cost:1m Owned:" + up3Owned;
+
     let t4 = parseInt( localStorage.Sup4Owned );
-    upgradeElement4.innerHTML = "Cost:1b Owned:" + ((t4 != NaN) ? t4 : 0);
+    up4Owned = ((!isNaN(t4)) ? t4 : 0);
+    upgradeElement4.innerHTML = "Cost:1b Owned:" + up4Owned;
+
 
     let tc1 = parseInt( localStorage.ScUp1Owned );
-    clickUpgradeElement1.innerHTML = "Cost: 100 Owned: " + ((tc1 != NaN) ? tc1 : 0);
-    console.log(tc1);
+    cUp1Owned = ((!isNaN(tc1)) ? tc1 : 0);
+    clickUpgradeElement1.innerHTML = "Cost:100 Owned: " + cUp1Owned;
+
     let tc2 = parseInt( localStorage.ScUp2Owned );
-    clickUpgradeElement2.innerHTML = "Cost: 5000 Owned: " + ((tc2 != NaN) ? tc2 : 0);
+    cUp2Owned = ((!isNaN(tc2)) ? tc2 : 0);
+    clickUpgradeElement2.innerHTML = "Cost:5000 Owned: " + cUp2Owned;
+
     let tc3 = parseInt( localStorage.ScUp3Owned );
-    clickUpgradeElement3.innerHTML = "Cost: 1m Owned: " + ((tc3 != NaN) ? tc3 : 0);
+    cUp3Owned = ((!isNaN(tc3)) ? tc3 : 0);
+    clickUpgradeElement3.innerHTML = "Cost:1m Owned: " + cUp3Owned;
+
     let tc4 = parseInt( localStorage.ScUp4Owned );
-    clickUpgradeElement4.innerHTML = "Cost: 1b Owned: " + ((tc4 != NaN) ? tc4 : 0);
+    cUp4Owned = ((!isNaN(tc4)) ? tc4 : 0);
+    clickUpgradeElement4.innerHTML = "Cost:1b Owned: " + cUp4Owned;
+
 }
     
