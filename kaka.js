@@ -1,6 +1,6 @@
 
 let cookieCount = 0;
-let muffinCount = 10000000000;
+let muffinCount = 0;
 let cookieCountElement;
 let muffinCountElement;
 let upgradeElement1;
@@ -12,6 +12,7 @@ let clickUpgradeElement2;
 let clickUpgradeElement3;
 let clickUpgradeElement4;
 function Init() {
+    muffinCount = parseInt( localStorage.getItem(muffins) );
     cookieCountElement = document.getElementById("cce");
     muffinCountElement = document.getElementById("mce");
     upgradeElement1 = document.getElementById("ut1");
@@ -29,6 +30,7 @@ function Init() {
         muffinCount += up3Owned*10000;
         muffinCount += up4Owned*10000000;
         muffinCountElement.innerHTML = muffinCount + " Muffins";
+        localStorage.setItem(muffins, muffinCount.toString());
         console.log("LOOP");
     }, 1000);
 }
