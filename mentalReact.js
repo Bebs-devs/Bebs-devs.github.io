@@ -1,4 +1,4 @@
-let timeElapsed = 0;
+let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
     timeElapsed = 0;
@@ -11,15 +11,23 @@ function StopTimer() {
 
 
 
+let btn;
+let box;
 function Init() {
-    const btn = document.getElementById("startButton");
-    const box = document.getElementById("stopButton");
+    
+    btn = document.getElementById("startButton");
+    box = document.getElementById("stopButton");
+    MoveStopButtonRandomly();
     btn.addEventListener("click", () => {
-        const height = document.documentElement.clientHeight;
-        const width = document.documentElement.clientWidth;
-        let randY = Math.floor((Math.random() * height) + 1);
-        let randX = Math.floor((Math.random() * width) + 1);
-        box.style.top = randY + "px";
-        box.style.right = randX + "px";
+        MoveStopButtonRandomly();
     });
+}
+
+function MoveStopButtonRandomly(params) {
+    let height = document.documentElement.clientHeight;
+    let width = document.documentElement.clientWidth;
+    let randY = Math.floor((Math.random() * height) + 1);
+    let randX = Math.floor((Math.random() * width) + 1);
+    box.style.top = randY + "px";
+    box.style.right = randX + "px";
 }
