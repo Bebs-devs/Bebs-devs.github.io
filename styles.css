@@ -192,10 +192,11 @@ grid-row-gap: 10px;
   display: grid;
   grid-template-columns: 2fr repeat(3, 1fr) 2fr;
   grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 3px;
-  grid-row-gap: 3px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   }
   
+  .divMentalInfo { grid-area: 1 / 1 / 1 / 1; }
   .divMentals { grid-area: 2 / 1 / 6 / 2; }
   .divMentalMiddle { grid-area: 1 / 3 / 2 / 4; }
   .divMentalRight { grid-area: 2 / 2 / 5 / 5; }
