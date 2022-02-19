@@ -8,9 +8,11 @@
     <script src="mentalReact.js"></script>
 </head>
 <body>
+    <script>window.onload = Init;</script>
     <a href="mental.html"><button type="button">I want to do something else!</button></a>
+    <p>Click the Start Button and then as quickly as you can click the Stop Button!</p>
     <p id="reactTime"></p>
-    <button onclick="StartTimer();">Start Timer</button>
-    <button onclick="StopTimer();">Stop Timer</button>
+    <button id="startButton" onclick="StartTimer();">Start Timer</button>
+    <button id="stopButton" onclick="StopTimer();">Stop Timer</button>
 </body>
 </html>
