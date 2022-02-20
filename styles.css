@@ -204,7 +204,7 @@ grid-row-gap: 10px;
 #stopButton {
   --div-width: 100px;
   position: absolute;
-  transition: .2s top, .2s right;
+  transition: .1s top, .1s right;
   top: 0;
   right: calc(100% - var(--div-width));
   width: 10vw;
