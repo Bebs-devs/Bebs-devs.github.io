@@ -215,3 +215,7 @@ grid-row-gap: 10px;
   z-index: 1;
   position: absolute;
 }
+
+.noSelect {
+  user-select: none;
+}
