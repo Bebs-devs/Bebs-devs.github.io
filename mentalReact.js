@@ -22,7 +22,9 @@ function SendSaveFunction (func){
 let btn;
 let box;
 function Init() {
-    
+    document.getElementById("reactTime").innerHTML = "You got: " + NaN + "ms"; 
+    //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
+    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + NaN + "ms"; 
     btn = document.getElementById("startButton");
     box = document.getElementById("stopButton");
     MoveStopButtonRandomly();
