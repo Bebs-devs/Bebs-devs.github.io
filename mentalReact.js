@@ -1,3 +1,4 @@
+
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
@@ -7,9 +8,14 @@ function StartTimer() {
 function StopTimer() {
     timeElapsed = Date.now() - startTime;
     document.getElementById("reactTime").innerHTML = timeElapsed.toString() + "ms"; 
+
+    if (timeElapsed < highscore) {SaveNewHighscore(timeElapsed);}
 }
 
-
+let SaveNewHighscore;
+function SendSaveFunction (func){
+    SaveNewHighscore = func;
+}
 
 let btn;
 let box;
@@ -21,6 +27,8 @@ function Init() {
     btn.addEventListener("click", () => {
         MoveStopButtonRandomly();
     });
+
+    
 }
 
 function MoveStopButtonRandomly(params) {
@@ -30,4 +38,11 @@ function MoveStopButtonRandomly(params) {
     let randX = Math.floor((Math.random() * width) + 1);
     box.style.top = randY + "px";
     box.style.right = randX + "px";
+}
+
+let highscore;
+function LoadNewHighscore(data){
+    console.log(data);
+    highscore = data.time;
+    console.log(highscore);
 }

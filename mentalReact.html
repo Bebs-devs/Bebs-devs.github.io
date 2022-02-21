@@ -16,27 +16,42 @@
     <button id="stopButton" onclick="StopTimer();">Stop Timer</button>
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
+      import { getDatabase, ref, set, onValue} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
       
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyAY37GTsbPpWoyYdiPp6R2Os7PaIkobHig",
-          authDomain: "bebspages.firebaseapp.com",
-          projectId: "bebspages",
-          storageBucket: "bebspages.appspot.com",
-          messagingSenderId: "476935444250",
-          appId: "1:476935444250:web:e6eded2ae3cdb597a17ea3",
-          measurementId: "G-6BJR8N0XZY"
-        };
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAY37GTsbPpWoyYdiPp6R2Os7PaIkobHig",
+        authDomain: "bebspages.firebaseapp.com",
+        databaseURL: "https://bebspages-default-rtdb.europe-west1.firebasedatabase.app",
+        projectId: "bebspages",
+        storageBucket: "bebspages.appspot.com",
+        messagingSenderId: "476935444250",
+        appId: "1:476935444250:web:e6eded2ae3cdb597a17ea3",
+        measurementId: "G-6BJR8N0XZY"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const database = getDatabase(app);
       
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
+      SendSaveFunction(SaveNewHighscore);
+      function SaveNewHighscore(time) 
+      {
+          set(ref(database, "highscores/react"), {time:time, user:"urmom"});
+      }
+      
+      onValue(ref(database, "highscores/react"), (snapshot) => {
+        const data = snapshot.val();
+        LoadNewHighscore(data);
+      });
+    </script>
 </body>
 </html>
