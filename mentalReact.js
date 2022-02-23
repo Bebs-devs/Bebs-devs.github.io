@@ -51,3 +51,7 @@ function LoadNewHighscore(data){
     console.log(highscore);
     document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms"; 
 }
+
+function LoggedIn(info){
+    Window.getElementById(userInfo).innerHTML = "Logged In as " + info.user;
+}
