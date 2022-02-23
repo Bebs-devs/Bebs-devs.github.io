@@ -53,5 +53,6 @@ function LoadNewHighscore(data){
 }
 
 function LoggedIn(info){
-    Window.getElementById(userInfo).innerHTML = "Logged In as " + info.user;
+    console.log("Wassup; " + info);
+    Window.getElementById(userInfo).innerHTML = "Logged In as " + info;
 }
