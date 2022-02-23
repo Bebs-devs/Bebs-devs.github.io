@@ -18,7 +18,7 @@
     
     <button id="startButton" onclick="StartTimer();">Start Timer</button>
     <button id="stopButton" onclick="StopTimer();">Stop Timer</button>
-    <p style="color: wheat;" id="userInfo"><br>Logged in as: Ogoa</p>
+    <p style="color: wheat;" id="userInfo"><br>Logged in as: ____</p>
 
     <!--<script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>-->
     <script type="module">
@@ -63,6 +63,19 @@
       
       const provider = new GoogleAuthProvider();
       const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          LoggedIn(user);
+          // ...
+        } else {
+          // User is signed out
+          // ...
+          LoggedOut();
+        }
+      });
+      
       signInWithPopup(auth, provider)
         .then((result) => {
           // This gives you a Google Access Token. You can use it to access the Google API.
@@ -71,7 +84,6 @@
           // The signed-in user info.
           const user = result.user;
           // ...
-          LoggedIn(user);
         }).catch((error) => {
           // Handle Errors here.
           const errorCode = error.code;
