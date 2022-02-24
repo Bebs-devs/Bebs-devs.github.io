@@ -103,7 +103,12 @@
             const credential = GoogleAuthProvider.credentialFromError(error);
             // ...
           }); 
-        } else {signOut();}
+        } else {
+          signOut(auth).then(() => {
+          // Sign-out successful.
+        }).catch((error) => {
+          // An error happened.
+        });}
       }
 
       SendSaveFunction(SaveNewHighscore);
