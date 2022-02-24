@@ -11,7 +11,7 @@ function StopTimer() {
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
     document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms"; 
 
-    if (timeElapsed < highscore) {SaveNewHighscore(timeElapsed);}
+    if (timeElapsed < highscore) {SaveNewHighscore(timeElapsed, user);}
 }
 
 let SaveNewHighscore;
@@ -36,7 +36,7 @@ let box;
 function Init() {
     document.getElementById("reactTime").innerHTML = "You got: " + NaN + "ms"; 
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + NaN + "ms"; 
+    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + NaN + "ms by null"; 
     btn = document.getElementById("startButton");
     box = document.getElementById("stopButton");
     MoveStopButtonRandomly();
@@ -61,15 +61,18 @@ function LoadNewHighscore(data){
     console.log(data);
     highscore = data.time;
     console.log(highscore);
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms"; 
+    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + user; 
 }
 
+let user;
 function LoggedIn(info){
-    console.log("Wassup; " + info.displayName);
+    user = info.displayName;
+    console.log("Wassup; " + user);
     document.getElementById("userInfo").innerHTML = "Logged In as " + info.displayName;
 }
 
 function LoggedOut(){
+    user = null;
     console.log("Logged Out")
     document.getElementById("userInfo").innerHTML = "Logged Out";
 }

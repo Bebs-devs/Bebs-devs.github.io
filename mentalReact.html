@@ -33,7 +33,7 @@
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-analytics.js";
       import { getDatabase, ref, set, onValue} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
       import {initializeAppCheck, ReCaptchaV3Provider} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app-check.js";
-      import { GoogleAuthProvider, signInWithPopup, getAuth, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+      import { GoogleAuthProvider, signInWithPopup, getAuth, onAuthStateChanged, signOut  } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
       
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
@@ -107,9 +107,9 @@
       }
 
       SendSaveFunction(SaveNewHighscore);
-      function SaveNewHighscore(time) 
+      function SaveNewHighscore(time, user) 
       {
-          set(ref(database, "highscores/react"), {time:time, user:"urmom"});
+          set(ref(database, "highscores/react"), {time:time, user:user});
       }
       
       onValue(ref(database, "highscores/react"), (snapshot) => {
