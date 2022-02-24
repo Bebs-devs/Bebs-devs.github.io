@@ -19,6 +19,18 @@ function SendSaveFunction (func){
     SaveNewHighscore = func;
 }
 
+let logIO;
+function SendLogIOFunction (func){
+    logIO = func;
+}
+
+function LogIn(){
+    logIO(true);
+}
+function LogOut(){
+    logIO(false);
+}
+
 let btn;
 let box;
 function Init() {
