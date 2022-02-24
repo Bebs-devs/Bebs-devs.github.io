@@ -219,3 +219,13 @@ grid-row-gap: 10px;
 .noSelect {
   user-select: none;
 }
+
+.loginDivParent {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, 1fr) 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}  
+  .loginDiv {grid-area: 3/5/3/5;}
+
