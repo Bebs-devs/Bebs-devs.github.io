@@ -9,7 +9,7 @@ function StopTimer() {
     timeElapsed = Date.now() - startTime;
     document.getElementById("reactTime").innerHTML = "You got: " + timeElapsed.toString() + "ms"; 
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms"; 
+    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + user; 
 
     if (timeElapsed < highscore) {SaveNewHighscore(timeElapsed, user);}
 }
