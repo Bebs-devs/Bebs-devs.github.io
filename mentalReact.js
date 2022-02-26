@@ -1,4 +1,4 @@
-
+let version = "Version: 0.4.11"
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
@@ -34,6 +34,7 @@ function LogOut(){
 let btn;
 let box;
 function Init() {
+    document.getElementById("version").innerHTML = version;
     document.getElementById("reactTime").innerHTML = "You got: " + NaN + "ms"; 
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
     document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + NaN + "ms by null"; 
@@ -61,7 +62,7 @@ let highscoreUser;
 function LoadNewHighscore(data){
     console.log(data);
     highscore = data.time;
-    highscoreUser = data.displayName;    
+    highscoreUser = data.user;
     console.log(highscore);
     document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
 }
