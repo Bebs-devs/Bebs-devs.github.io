@@ -9,7 +9,7 @@ function StopTimer() {
     timeElapsed = Date.now() - startTime;
     document.getElementById("reactTime").innerHTML = "You got: " + timeElapsed.toString() + "ms"; 
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + user; 
+    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
 
     if (timeElapsed < highscore) {SaveNewHighscore(timeElapsed, user);}
 }
@@ -57,18 +57,20 @@ function MoveStopButtonRandomly(params) {
 }
 
 let highscore;
+let highscoreUser;
 function LoadNewHighscore(data){
     console.log(data);
     highscore = data.time;
+    highscoreUser = data.displayName;    
     console.log(highscore);
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + user; 
+    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
 }
 
 let user;
 function LoggedIn(info){
     user = info.displayName;
     console.log("Wassup; " + user);
-    document.getElementById("userInfo").innerHTML = "Logged In as " + info.displayName;
+    document.getElementById("userInfo").innerHTML = "Logged In as " + user;
 }
 
 function LoggedOut(){
