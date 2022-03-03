@@ -45,7 +45,12 @@ function Init() {
         MoveStopButtonRandomly();
     });
 
-    
+    console.log(Days());
+}
+
+function Days(){
+    var now = new Date();
+    return fullDaysSinceEpoch = Math.floor(now/8.64e7);
 }
 
 function MoveStopButtonRandomly(params) {
