@@ -64,11 +64,20 @@ function MoveStopButtonRandomly(params) {
 
 let highscore;
 let highscoreUser;
+let allTimeHighscores;
+let allTimehighscoreUsers;
+let dailyHighscores;
+let dailyHighscoreUsers;
 function LoadNewHighscore(data){
     console.log(data);
     highscore = data.time;
     highscoreUser = data.user;
-    console.log(highscore);
+    allTimeHighscores = data.allTimes;
+    allTimehighscoreUsers = data.allUsers;
+    dailyHighscores = data.dailyTimes;
+    dailyHighscoreUsers = data.dailyUsers;
+    let dailyDay = data.dailyDay;
+    console.log(dailyHighscoreUsers[1]);
     document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
 }
 
