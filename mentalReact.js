@@ -1,4 +1,4 @@
-let version = "Version: 0.4.13"
+let version = "Version: 0.4.14"
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
