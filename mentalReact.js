@@ -1,4 +1,4 @@
-let version = "Version: 0.5.1 [exprimental]"
+let version = "Version: 0.5.2 [exprimental]"
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
@@ -11,7 +11,27 @@ function StopTimer() {
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
     document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
 
-    if (timeElapsed < highscore) {SaveNewHighscore(timeElapsed, user);}
+    for (let i = 0; i<allTimeHighscores.length; i++) {
+        const element = allTimeHighscores[i];
+        if (timeElapsed < element) 
+        {
+            allTimeHighscores[i] = timeElapsed;
+            allTimehighscoreUsers[i] = user;
+            SaveNewHighscore(allTimeHighscores, allTimehighscoreUsers, true);
+            break;
+        }
+    }
+
+    for (let i = 0; i<dailyHighscores.length; i++) {
+        const element = dailyHighscores[i];
+        if (timeElapsed < element) 
+        {
+            dailyHighscores[i] = timeElapsed;
+            dailyHighscoreUsers[i] = user;
+            SaveNewHighscore(dailyHighscores, dailyHighscoreUsers, false);
+            break;
+        }
+    }
 }
 
 let SaveNewHighscore;

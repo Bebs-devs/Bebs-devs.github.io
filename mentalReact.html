@@ -117,9 +117,17 @@
 
       
       SendSaveFunction(SaveNewHighscore);
-      function SaveNewHighscore(time, user) 
+      function SaveNewHighscore(times, users, allTime) 
       {
-          update(ref(database, "highscores/react"), {time:time, user:user});
+        switch (allTime) {
+          case true:
+            update(ref(database, "highscores/react"), {allTimes:times, allUsers:users});
+            break;
+          case false:
+            update(ref(database, "highscores/react"), {dailyTimes:times, dailyUsers:users});
+            break;
+        }
+        
       }
       
       onValue(ref(database, "highscores/react"), (snapshot) => {
