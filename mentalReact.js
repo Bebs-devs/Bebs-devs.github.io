@@ -1,4 +1,4 @@
-let version = "Version: 0.4.15"
+let version = "Version: 0.4.1 [exprimental]"
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
@@ -79,6 +79,21 @@ function LoadNewHighscore(data){
     let dailyDay = data.dailyDay;
     console.log(dailyHighscoreUsers[1]);
     document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
+
+    const aDiv = document.getElementById("allTimeBoardDiv");
+    const dDiv = document.getElementById("dailyBoardDiv");
+    
+    aDiv.innerHTML = `<b>All Time Leaderboard:</b> <br>
+     1. ${allTimeHighscores[0]}ms by ${allTimehighscoreUsers[0]} <br>
+     2. ${allTimeHighscores[1]}ms by ${allTimehighscoreUsers[1]} <br>
+      3. ${allTimeHighscores[2]}ms by ${allTimehighscoreUsers[2]} <br>
+       4. ${allTimeHighscores[3]}ms by ${allTimehighscoreUsers[3]} <br>
+        5. ${allTimeHighscores[4]}ms by ${allTimehighscoreUsers[4]}`
+    
+    dDiv.innerHTML = `<b>Daily Leaderboard: </b> <br>
+     1. ${dailyHighscores[0]}ms by ${dailyHighscoreUsers[0]} <br>
+      2. ${dailyHighscores[1]}ms by ${dailyHighscoreUsers[1]} <br>
+       3. ${dailyHighscores[2]}ms by ${dailyHighscoreUsers[2]} <br>`
 }
 
 let user;
