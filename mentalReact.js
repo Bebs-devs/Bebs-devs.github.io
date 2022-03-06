@@ -1,4 +1,4 @@
-let version = "Version: 0.5.3 [exprimental]"
+let version = "Version: 0.5.4 [exprimental]"
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
@@ -9,7 +9,6 @@ function StopTimer() {
     timeElapsed = Date.now() - startTime;
     document.getElementById("reactTime").innerHTML = "You got: " + timeElapsed.toString() + "ms"; 
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
 
     for (let i = 0; i<allTimeHighscores.length; i++) {
         const element = allTimeHighscores[i];
@@ -57,7 +56,6 @@ function Init() {
     document.getElementById("version").innerHTML = version;
     document.getElementById("reactTime").innerHTML = "You got: " + NaN + "ms"; 
     //document.getElementById("pbTime").innerHTML = "Your best: " + timeElapsed.toString() + "ms"; 
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + NaN + "ms by null"; 
     btn = document.getElementById("startButton");
     box = document.getElementById("stopButton");
     MoveStopButtonRandomly();
@@ -82,23 +80,18 @@ function MoveStopButtonRandomly(params) {
     box.style.right = randX + "px";
 }
 
-let highscore;
-let highscoreUser;
 let allTimeHighscores;
 let allTimehighscoreUsers;
 let dailyHighscores;
 let dailyHighscoreUsers;
 function LoadNewHighscore(data){
     console.log(data);
-    highscore = data.time;
-    highscoreUser = data.user;
     allTimeHighscores = data.allTimes;
     allTimehighscoreUsers = data.allUsers;
     dailyHighscores = data.dailyTimes;
     dailyHighscoreUsers = data.dailyUsers;
     let dailyDay = data.dailyDay;
     console.log(dailyHighscoreUsers[1]);
-    document.getElementById("highscoreTime").innerHTML = "WORLD RECORD: " + highscore + "ms by " + highscoreUser; 
 
     const aDiv = document.getElementById("allTimeBoardDiv");
     const dDiv = document.getElementById("dailyBoardDiv");
