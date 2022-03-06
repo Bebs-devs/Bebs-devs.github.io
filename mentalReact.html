@@ -124,6 +124,16 @@
       
       onValue(ref(database, "highscores/react"), (snapshot) => {
         const data = snapshot.val();
+        if (data.dailyDay != Days())
+        {
+          
+          update(ref(database, "highscore/react"), 
+          {
+            dailyDay:Days(),
+            dailyTimes:[-1,-1,-1],
+            dailyUsers:["empty","empty","empty"],
+          });
+        }
         LoadNewHighscore(data);
       });
 
