@@ -1,4 +1,4 @@
-let version = "Version: 0.5.2 [exprimental]"
+let version = "Version: 0.5.3 [exprimental]"
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
@@ -13,7 +13,7 @@ function StopTimer() {
 
     for (let i = 0; i<allTimeHighscores.length; i++) {
         const element = allTimeHighscores[i];
-        if (timeElapsed < element) 
+        if (timeElapsed < element || element < 0) 
         {
             allTimeHighscores[i] = timeElapsed;
             allTimehighscoreUsers[i] = user;
@@ -24,7 +24,7 @@ function StopTimer() {
 
     for (let i = 0; i<dailyHighscores.length; i++) {
         const element = dailyHighscores[i];
-        if (timeElapsed < element) 
+        if (timeElapsed < element || element < 0) 
         {
             dailyHighscores[i] = timeElapsed;
             dailyHighscoreUsers[i] = user;
