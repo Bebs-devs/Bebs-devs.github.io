@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week: </title>
+    <title id="t">Week: </title>
 </head>
 <body>
     <a href="index.html"><button type="button">Home</button></a>
@@ -36,6 +36,7 @@
         console.log(date.getWeekYear());
 
         document.getElementById("number").innerHTML = date.getWeek();
+        document.getElementById("t").innerHTML = "Week: " + date.getWeek();
         
     </script>
     
