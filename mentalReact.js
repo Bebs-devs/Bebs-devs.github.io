@@ -1,4 +1,4 @@
-let version = "Version: 0.5.4"
+let version = "Version: 0.5.5 [expreintentll]"
 let timeElapsed;
 let startTime = Date.now();
 function StartTimer() {
@@ -14,8 +14,14 @@ function StopTimer() {
         const element = allTimeHighscores[i];
         if (timeElapsed < element || element < 0) 
         {
-            allTimeHighscores[i] = timeElapsed;
-            allTimehighscoreUsers[i] = user;
+            //allTimeHighscores[i] = timeElapsed;
+            allTimeHighscores.splice(i, 0, timeElapsed);
+            allTimeHighscores.splice(-1,1);
+
+            //allTimehighscoreUsers[i] = user;
+            allTimehighscoreUsers.splice(i, 0, user);
+            allTimehighscoreUsers.splice(-1,1);
+
             SaveNewHighscore(allTimeHighscores, allTimehighscoreUsers, true);
             break;
         }
