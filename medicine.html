@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Medicine</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255, 94, 0);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(255, 0, 68);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(255, 0, 68);
+  }</style>
+</head>
+<!--TODO: langugage
+red text
+count of empty-->
+<body>
+    <script>
+        function update()
+        {
+            weight = document.getElementById("inpWeight").value;
+            concentration = document.getElementById("inpConcentration").value;
+            volume = document.getElementById("inpVolume").value;
+            dosage = document.getElementById("inpDosage").value;
+
+            document.getElementById("inpWeight").placeholder = null;
+            document.getElementById("inpConcentration").placeholder = null;
+            document.getElementById("inpVolume").placeholder = null;
+            document.getElementById("inpDosage").placeholder = null;
+
+            if (weight == 0) {
+                document.getElementById("inpWeight").value = null;
+                document.getElementById("inpWeight").placeholder = (1/dosage)*(concentration*volume);
+                console.log("gotcha weight");
+
+            } else if (concentration == 0) {
+                concentration = document.getElementById("inpConcentration").value = null;
+                concentration = document.getElementById("inpConcentration").placeholder = (weight*dosage)/volume;
+                console.log("gotcha concentration");
+
+            } else if (volume == 0){
+                volume = document.getElementById("inpVolume").value = null;
+                volume = document.getElementById("inpVolume").placeholder = (weight*dosage)/(concentration);
+                console.log("gotcha volume");
+
+            } else if (dosage == 0){
+                dosage = document.getElementById("inpDosage").value = null;
+                dosage = document.getElementById("inpDosage").placeholder = (concentration*volume)/weight;
+                console.log("gotcha dosage");
+
+            } else {
+                console.log("interesting")
+            }
+        
+        }
+    </script>
+    </div>
+
+    <hr>
+    <h2 class="w3-center">Calculator</h2>
+    </div>
+
+    <div class="w3-row-padding">
+
+    <div class="w3-whole">
+    <form class="w3-container w3-card-4">
+    <h2>Input three values to get the remaining one</h2>
+    <div class="w3-section">      
+        <label>Weight (kg)</label>
+        <input id="inpWeight" class="w3-input w3-border" type="number" onchange="update()" required>
+            
+    </div>
+    <div class="w3-section">      
+        <label>Concentration (mg/ml)</label>
+        <input id="inpConcentration" class="w3-input w3-border" type="number" onchange="update()" required>
+        
+    </div>
+    <div class="w3-section">      
+        <label>Volume (ml)</label>
+        <input id="inpVolume" class="w3-input w3-border" type="number" onchange="update()" required>
+        
+    </div>
+    <div class="w3-section">      
+        <label>Dosage (mg/kg)</label>
+        <input id="inpDosage" class="w3-input w3-border" type="number" onchange="update()" required>
+        
+    </div>
+
+    <div class="w3-row">
+    </div>
+    </form>
+    </div>
+    </div>
+    <hr>
+    
+</body>
+</html>
