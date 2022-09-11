@@ -1,32 +1,43 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-    <title>Pi π</title>
+    <title>Pi game</title>
+    <link rel="stylesheet" href="pistyles.css">
+    <script src="digits.txt"></script>
+    <script type="text/javascript" src="pi.js"></script>
 </head>
 <body>
-    <header class="w3-container w3-theme w3-padding" id="myHeader">
-        <a href="../index.html"><button type="button">Home?</button></a>
-    </header>
-    
-    <form action="/action_page.php" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-        <h2 class="w3-center">Contact Us</h2>
-         
-        <div class="w3-row w3-section">
-            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
-            <div class="w3-rest">
-              <input class="w3-input w3-border" name="first" type="text" placeholder="First Name">
-            </div>
+    <script>window.onload = Init;</script>
+    <section class="layout">
+        <div class="home">
+            <a href="../index.html"><button type="button">Home?</button></a>
         </div>
-        
-        <p class="w3-center">
-            <button class="w3-button w3-section w3-blue w3-ripple"> Send </button>
-        </p>
-    </form>
-
+        <div class="header">
+            <h1 style="font-size: 40;">Wowie pi game</h1>
+        </div>
+        <div class="settings">
+            <button type="button">Settings</button>
+        </div>
+        <div class="digitPrompt">
+            <p style="font-size: 20;" id="digitPrompt">Digit at position x:</p>
+        </div>
+        <div class="digitIn">
+            <input type="number" placeholder="x" name="digitIn" access="false" min="0" max="9" id="digitIn" onchange="guessed()" autofocus>
+        </div>
+        <div class="stats">
+            <p>Accuracu</p>
+            <p>Preicios</p>
+            <p>Strke</p>
+        </div>
+        <!-- <div>7</div> -->
+        <!-- <div>8</div> -->
+        <!-- <div>9</div> -->
+        <!-- <div>10</div> -->
+        <!-- <div>11</div> -->
+        <!-- <div>12</div> -->
+      </section>
 </body>
 </html>
