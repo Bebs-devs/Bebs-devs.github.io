@@ -57,7 +57,7 @@ p {
 
   .fade-out-text {
     font-family: Arial;
-    font-size: 60px;
+    font-size: 20px;
     animation: fadeOut 5s;
     -webkit-animation: fadeOut 5s;
     -moz-animation: fadeOut 5s;
