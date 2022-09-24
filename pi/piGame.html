@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pi game</title>
     <link rel="stylesheet" href="pistyles.css">
-    <script src="digits.txt"></script>
     <script type="text/javascript" src="pi.js"></script>
 </head>
 <body>
@@ -22,16 +21,16 @@
             <button type="button">Settings</button>
         </div>
         <div class="digitPrompt">
-            <p style="color: red;" class=fade-out-text>Hello</p>
+            <p style="font-family: Arial; font-size: 16px;" id=digitFeedback></p>
             <p style="font-size: 20;" id="digitPrompt">Digit at position x:</p>
         </div>
         <div class="digitIn">
             <input type="number" placeholder="x" name="digitIn" access="false" min="0" max="9" id="digitIn" onchange="guessed()" autofocus>
         </div>
         <div class="stats">
-            <p>Accuracu</p>
-            <p>Preicios</p>
-            <p>Strke</p>
+            <p id="accuracy">Accuracy: 100%</p>
+            <p id="streak">0 in a row</p>
+            <p id="highStreak">Record: 0</p>
         </div>
         <!-- <div>7</div> -->
         <!-- <div>8</div> -->

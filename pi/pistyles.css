@@ -55,14 +55,34 @@ p {
 
   .stats { grid-area: stats; }
 
-  .fade-out-text {
-    font-family: Arial;
-    font-size: 20px;
-    animation: fadeOut 5s;
-    -webkit-animation: fadeOut 5s;
-    -moz-animation: fadeOut 5s;
-    -o-animation: fadeOut 5s;
-    -ms-animation: fadeOut 5s;
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.fade-out-text {
+    animation: fadeOut 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+    -webkit-animation: fadeOut 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+
+    -moz-animation: fadeOut 3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-fill-mode: forwards;
+
+    -o-animation: fadeOut 3s;
+    -o-animation-iteration-count: 1;
+    -o-animation-fill-mode: forwards;
+
+    -ms-animation: fadeOut 3s;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
   }
   
   @keyframes fadeOut {
