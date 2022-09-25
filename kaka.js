@@ -26,6 +26,8 @@ function Init() {
     clickUpgradeElement3 = document.getElementById("cUt3");
     clickUpgradeElement4 = document.getElementById("cUt4");
 
+    muffinImg = document.getElementById("muffinImg");
+
     console.log(localStorage.SmuffinCount);
     muffinCount = parseInt( localStorage.SmuffinCount );
     if (isNaN(muffinCount)) {muffinCount=0;}
@@ -49,6 +51,27 @@ function Init() {
 
 function UpdateMuffinText() {
     muffinCountElement.innerHTML = muffinCount.toString() + " Muffins";
+    muffinThousand = Math.floor(Math.log10(muffinCount) / 3);
+    switch(muffinThousand){
+        case 0:
+            console.log("color o");
+            break;
+        case 1:
+            console.log("color is 1");
+            muffinImg.src = "muffinsUpscaled/muffin_1.png"
+            break;
+        case 2:
+            console.log("color is 2");
+            muffinImg.src = "muffinsUpscaled/muffin_2.png"
+            break;
+        default:
+            console.log("unknow color");
+    }
+    //muffinImg.src = "hackanm.gif";
+    //TODO
+    // Change names of muffins
+    // Expand switch case
+    // change way of updating from every loop to when change
 }
 function ClickCookie() {
     cookieCount ++;

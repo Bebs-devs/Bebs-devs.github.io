@@ -125,3 +125,12 @@ p {
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   /* cursor: pointer; Add a pointer on hover */
 }
+
+#closeSettings 
+{
+  position: relative;
+  float: right;
+  margin-left: 0;
+  margin-right: 4;
+  margin-bottom: 0;
+}
