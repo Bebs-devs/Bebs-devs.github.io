@@ -18,7 +18,7 @@
             <h1 style="font-size: 40;">Wowie pi game</h1>
         </div>
         <div class="settings">
-            <button type="button">Settings</button>
+            <button type="button" onclick="openSettings()">Settings</button>
         </div>
         <div class="digitPrompt">
             <p style="font-family: Arial; font-size: 16px;" id=digitFeedback></p>
@@ -38,6 +38,10 @@
         <!-- <div>10</div> -->
         <!-- <div>11</div> -->
         <!-- <div>12</div> -->
-      </section>
+    </section>
+        <div id="settingsOverlay">
+            <h1>Settings!</h1>
+            <button type="button" onclick="closeSettings()">Close and Save</button>
+        </div>
 </body>
 </html>
