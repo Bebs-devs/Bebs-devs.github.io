@@ -179,7 +179,7 @@ function ClickUpgrade(index) {
     }
 }
 
-function BakeMuffins(amount)
+function SecretMuffinCheat(amount)
 {
         muffinCount += amount;
         UpdateMuffinText();
