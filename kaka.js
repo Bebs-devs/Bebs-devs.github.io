@@ -49,28 +49,19 @@ function Init() {
     }, 1000);
 }
 
+var lastThousand = 0;
 function UpdateMuffinText() {
     muffinCountElement.innerHTML = muffinCount.toString() + " Muffins";
-    muffinThousand = Math.floor(Math.log10(muffinCount) / 3);
-    switch(muffinThousand){
-        case 0:
-            console.log("color o");
-            break;
-        case 1:
-            console.log("color is 1");
-            muffinImg.src = "muffinsUpscaled/muffin_1.png"
-            break;
-        case 2:
-            console.log("color is 2");
-            muffinImg.src = "muffinsUpscaled/muffin_2.png"
-            break;
-        default:
-            console.log("unknow color");
+    muffinThousand = Math.floor(Math.log10(muffinCount) / 3) + 1;
+    if (muffinThousand != lastThousand) 
+    {
+        path = `muffinsUpscaled/muffin_${muffinThousand}.png`
+        muffinImg.src = path;
+        lastThousand = muffinThousand;
+        console.log("NEW MUFFIN");
     }
     //muffinImg.src = "hackanm.gif";
     //TODO
-    // Change names of muffins
-    // Expand switch case
     // change way of updating from every loop to when change
 }
 function ClickCookie() {
