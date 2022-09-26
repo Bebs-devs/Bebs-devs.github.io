@@ -53,7 +53,7 @@ var lastThousand = 0;
 function UpdateMuffinText() {
     muffinCountElement.innerHTML = muffinCount.toString() + " Muffins";
     muffinThousand = Math.floor(Math.log10(muffinCount) / 3) + 1;
-    if (muffinThousand != lastThousand) 
+    if (muffinThousand > lastThousand) 
     {
         path = `muffinsUpscaled/muffin_${muffinThousand}.png`
         muffinImg.src = path;
