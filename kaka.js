@@ -54,13 +54,13 @@ function Init() {
         UpdateMuffinText();
         
         localStorage.SmuffinCount = muffinCount;
-        console.log("LOOP "+ muffinCount);
+        console.log("LOOP "+ muffinCountg);
         manualMuffinsPerSec = muffinsPerClick * clicks;
         clicks = 0;
 
     }, 1000);
 }
-
+i
 var lastThousand = 0;
 function UpdateMuffinText() {
     muffinCountElement.innerHTML = muffinCount.toString() + " Muffins";
