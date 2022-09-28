@@ -8,7 +8,7 @@ function GetAnswer() {
 
 function Ord(n,a) 
 {   
-    console.log(`n:${n} and a:${a}`);
+    console.log(`n: ${n} and a: ${a}`);
     //a**1-x-infinity mod n
     let res = 0; 
     let perhapsX = 1;
