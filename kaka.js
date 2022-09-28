@@ -11,6 +11,10 @@ let clickUpgradeElement1;
 let clickUpgradeElement2;
 let clickUpgradeElement3;
 let clickUpgradeElement4;
+let muffinsPerSecElement;
+
+autoMuffinsPerSec = 0;
+manualMuffinsPerSec = 0;
 
 function Init() {
     
@@ -28,6 +32,8 @@ function Init() {
 
     muffinImg = document.getElementById("muffinImg");
 
+    muffinsPerSecElement = document.getElementById("muffinspersec");
+
     console.log(localStorage.SmuffinCount);
     muffinCount = parseInt( localStorage.SmuffinCount );
     if (isNaN(muffinCount)) {muffinCount=0;}
@@ -37,21 +43,28 @@ function Init() {
     console.log("INIT: " + muffinCount);
 
     setInterval(() => {
+        let temp = muffinCount;
         muffinCount += up1Owned;
         muffinCount += up2Owned*50;
         muffinCount += up3Owned*10000;
         muffinCount += up4Owned*10000000;
+        autoMuffinsPerSec = muffinCount-temp;
+
         if (isNaN(muffinCount)) {muffinCount=0;}
         UpdateMuffinText();
         
         localStorage.SmuffinCount = muffinCount;
         console.log("LOOP "+ muffinCount);
+        manualMuffinsPerSec = muffinsPerClick * clicks;
+        clicks = 0;
+
     }, 1000);
 }
 
 var lastThousand = 0;
 function UpdateMuffinText() {
     muffinCountElement.innerHTML = muffinCount.toString() + " Muffins";
+    muffinsPerSecElement.innerHTML = `${autoMuffinsPerSec}/s + ${manualMuffinsPerSec}/s`
     muffinThousand = Math.floor(Math.log10(muffinCount) / 3) + 1;
     if (muffinThousand > lastThousand) 
     {
@@ -69,13 +82,18 @@ function ClickCookie() {
     cookieCountElement.innerHTML = cookieCount + " Cookies";
 }
 
+let muffinsPerClick;
+let clicks = 0;
 function ClickMuffin() {
     console.log("clicked muffin");
+    clicks++;
+    let temp = muffinCount;
     muffinCount++;
     muffinCount += cUp1Owned;
     muffinCount += cUp2Owned*5;
     muffinCount += cUp3Owned*1000;
     muffinCount += cUp4Owned*1000000;
+    muffinsPerClick = muffinCount - temp;
     if (isNaN(muffinCount)) {muffinCount=0;}
     UpdateMuffinText();
 }
