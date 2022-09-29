@@ -45,22 +45,28 @@ function Init() {
     setInterval(() => {
         let temp = muffinCount;
         muffinCount += up1Owned;
-        muffinCount += up2Owned*50;
-        muffinCount += up3Owned*10000;
-        muffinCount += up4Owned*10000000;
+        muffinCount += up2Owned*25;
+        muffinCount += up3Owned*5000;
+        muffinCount += up4Owned*5000000;
         autoMuffinsPerSec = muffinCount-temp;
 
         if (isNaN(muffinCount)) {muffinCount=0;}
         UpdateMuffinText();
         
         localStorage.SmuffinCount = muffinCount;
-        console.log("LOOP "+ muffinCountg);
-        manualMuffinsPerSec = muffinsPerClick * clicks;
+        console.log("LOOP "+ muffinCount);
+        manualMuffinsPerSec = muffinsPerClick * clicks*2;
         clicks = 0;
 
-    }, 1000);
+    }, 500);
 }
-i
+
+function ResetPlayerData()
+{
+    localStorage.clear();
+    location.reload();
+}
+
 var lastThousand = 0;
 function UpdateMuffinText() {
     muffinCountElement.innerHTML = muffinCount.toString() + " Muffins";
