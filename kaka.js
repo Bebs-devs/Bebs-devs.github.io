@@ -48,7 +48,7 @@ function Init() {
         muffinCount += up2Owned*25;
         muffinCount += up3Owned*5000;
         muffinCount += up4Owned*5000000;
-        autoMuffinsPerSec = muffinCount-temp;
+        autoMuffinsPerSec = (muffinCount-temp) * 2;
 
         if (isNaN(muffinCount)) {muffinCount=0;}
         UpdateMuffinText();
