@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pi game</title>
     <link rel="stylesheet" href="pistyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        *{
+        font-family: "Roboto", sans-serif;
+        }
+    </style>
     <script type="text/javascript" src="pi.js"></script>
 </head>
 <body>
@@ -15,7 +21,7 @@
             <a href="../index.html"><button type="button">Home?</button></a>
         </div>
         <div class="header">
-            <h1 style="font-size: 40;">Wowie pi game</h1>
+            <h1 style="font-size: 40;">Pi Trainer</h1>
         </div>
         <div class="settings">
             <button type="button" onclick="openSettings()">Settings</button>
@@ -42,6 +48,12 @@
         <div id="settingsOverlay">
             <h1>Settings!</h1>
             <button id="closeSettings" type="button" onclick="closeSettings()">Close and Save</button>
+            
+            <label id="digitRangeLabel" for="digitRange">Digit Range</label>
+            <input type="number" name="digitRange" id="digitRange">
+
+            <label id="groupingLabel" for="grouping">Grouping</label>
+            <input type="checkbox" name="grouping" id="grouping">
         </div>
 </body>
 </html>

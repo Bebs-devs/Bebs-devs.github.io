@@ -6,10 +6,10 @@ html,body,.main{
     overflow: hidden;
     }
 
-input { 
+#digitIn { 
     text-align: center; 
-    font-size: 50;
-    
+    font-size: 50px;
+    border-radius: 10px;
 }
 text {
     text-align: center;
@@ -50,7 +50,7 @@ p {
   .digitIn 
     {
         grid-area: digitIn; 
-        align-self: stretch;
+        align-self: auto;
     }
 
   .stats { grid-area: stats; }
@@ -130,7 +130,35 @@ p {
 {
   position: relative;
   float: right;
-  margin-left: 0;
-  margin-right: 4;
-  margin-bottom: 0;
+  margin: 10px;
+}
+
+#digitRange
+{
+  position: relative;
+  top: 30px;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+#digitRangeLabel
+{
+  position: relative;
+  top: 30px;
+  margin: 10px;
+}
+
+#grouping
+{
+  position: absolute;
+  top: 70px;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+#groupingLabel
+{
+  position: absolute;
+  top: 70px;
+  margin: 10px;
 }

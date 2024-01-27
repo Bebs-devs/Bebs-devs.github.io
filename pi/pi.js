@@ -32,7 +32,7 @@ function guessed()
 
 function newPrompt()
 {
-    position = randomInRange(0,10);
+    position = randomInRange(0,90);
     digitPromptText.innerHTML = `Digit at position ${position}:`;
 }
 function randomInRange(min, max)
